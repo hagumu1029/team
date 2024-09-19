@@ -11,7 +11,7 @@
 
 
 //--ëÂèü--------------------------------------------
-
+#include"Game/Field.h"
 
 
 
@@ -111,14 +111,14 @@ void Init(void)
 
 
 	//--ëÂèü------------------------------------------------
+	ADD_RESOURCE("Sky", CImage::CreateImage("Image/Sky.png"));
+	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
+	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
 
 
 
 
-
-
-
-
+	//Base::Add(new Field());
 
 
 
