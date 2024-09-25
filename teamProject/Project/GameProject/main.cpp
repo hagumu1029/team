@@ -118,7 +118,7 @@ void Init(void)
 
 
 
-	//Base::Add(new Field());
+	Base::Add(new Field());
 
 
 
