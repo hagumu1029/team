@@ -12,6 +12,7 @@
 
 //--ëÂèü--------------------------------------------
 #include"Game/Field.h"
+#include"Title/Title.h"
 
 
 
@@ -114,12 +115,12 @@ void Init(void)
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/Sky.png"));
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
-
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 
 
 
 	Base::Add(new Field());
-
+	Base::Add(new Title());
 
 
 

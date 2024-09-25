@@ -1,0 +1,25 @@
+#include"Title.h"
+#include"../Base/Base.h"
+Title::Title() :Base(eType_Scene),
+m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
+{
+	m_img = COPY_RESOURCE("Title", CImage);
+	m_img.SetSize(1920, 1080);
+}
+void Title::Update()
+{
+	//ボタン1でタイトル破棄
+	if (m_cnt++ > 60 && PUSH(CInput::eButton1)) {
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		//ゲームシーンへ
+		//Base::Add(new Game());
+	}
+}
+
+void Title::Draw()
+{
+	m_img.Draw();
+	//文字表示
+	m_title_text.Draw(960, 150, 100, 100, 100, "Title");
+}
