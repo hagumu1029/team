@@ -1,11 +1,12 @@
 #include "Player.h"
 #include "Field.h"
 
+
 void Player::StateIdle()
 {
 	const float move_speed = 6;
 	bool move_flag = false;
-	const float jump_pow = 12;
+	const float jump_pow = 16;
 	if (HOLD(CInput::eLeft)) {
 		m_pos.x += -move_speed;
 		m_flip = true;
