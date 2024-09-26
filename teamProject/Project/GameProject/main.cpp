@@ -116,11 +116,11 @@ void Init(void)
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-
+	ADD_RESOURCE("Play", CImage::CreateImage("Image/Play.png"));
 
 
 	Base::Add(new Field());
-	//Base::Add(new Title());
+	Base::Add(new Title());
 
 
 
