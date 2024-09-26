@@ -16,7 +16,7 @@ void Title::Update()
 		//全てのオブジェクトを破棄
 		Base::KillAll();
 		//ゲームシーンへ
-		Base::Add(new Game());
+		//Base::Add(new Game());
 	}
 }
 
