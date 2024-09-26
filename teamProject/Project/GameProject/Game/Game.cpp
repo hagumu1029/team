@@ -13,8 +13,7 @@
 #include"Field.h"
 #include"../Title/Title.h"
 
-void Game::Update()
-{
+//void Game::Update()
 	//プレイヤー死亡　ボタン1でゲームシーン終了
 }
 
