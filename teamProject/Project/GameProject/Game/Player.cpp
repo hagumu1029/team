@@ -43,6 +43,7 @@ void Player::StateDamage()
 void Player::Update()
 {
 	m_pos_old = m_pos;
+	m_scroll.x = m_pos.x - 1280 / 2;
 	switch (m_state) {
 	case eState_Idle:
 		StateIdle();
@@ -52,6 +53,7 @@ void Player::Update()
 		m_is_ground = false;
 	    m_vec.y += GRAVITY;
 	    m_pos += m_vec;
+
 
 }
 
