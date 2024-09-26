@@ -16,6 +16,7 @@ private:
 	void StateDamage();
 public:
 	Player(const CVector2D& p);
-	void Updata();
+	void Update();
     void Draw();
+	void Collision(Base* b);
 };
