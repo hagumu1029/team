@@ -1,7 +1,7 @@
 #include "Base/Base.h"
 //--平山-------------------------------------------
 #include "Game/Player.h"
-
+#include "Game/Animdata.h"
 
 
 
@@ -100,9 +100,9 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 	//--平山-----------------------------------------------
-	Base::Add(new Player(CVector2D(200, 800)));
-
-
+	
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data,32,32 ));
+	Base::Add(new Player(CVector2D(200,350)));
 
 
 
