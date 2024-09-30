@@ -44,7 +44,7 @@ void Player::StateIdle()
 	m_img.ChangeAnimation(0);
 	m_pos_old = m_pos = p;
 	m_img.SetCenter(128, 224);
-	m_img.SetSize(100, 100);
+	m_img.SetSize(150, 150);
 	m_state = eState_Idle;
 	m_is_ground = true;
 	m_damage_no = -1;

@@ -23,6 +23,15 @@
     <ClCompile Include="Game\Animdata.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\cannon.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Bullet.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -56,6 +65,15 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Animdata.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\cannon.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Bullet.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Enemy.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

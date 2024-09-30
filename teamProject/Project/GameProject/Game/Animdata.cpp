@@ -44,3 +44,14 @@ ANIMDATA(playerJumpUp),
 ANIMDATA(playerJumpDown),
 
 };
+static TexAnim enemyRun[] = {
+	{ 0, 10},
+	{ 1 ,10},
+};
+static TexAnim enemyDown[] = {
+	{ 24, 10},
+};
+TexAnimData enemy_anim_data[] = {
+	ANIMDATA(enemyRun),
+	ANIMDATA(enemyDown),
+};
