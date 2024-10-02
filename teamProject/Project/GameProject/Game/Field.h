@@ -5,6 +5,8 @@ class Field :public Base {
 private:
 	//画像オブジェクト（前景）
 	CImage m_foreground;
+	//画像オブジェクト
+	CImage m_tree;
 	//画像オブジェクト（遠景）
 	CImage m_background;
 	//画像オブジェクト（最遠景）
