@@ -111,10 +111,13 @@ void Init(void)
 
 
 
-	//--ëÂèü------------------------------------------------
-	ADD_RESOURCE("Sky", CImage::CreateImage("Image/Sky.png"));
-	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
-	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
+
+
+
+	//--ëÂèü----------------------------
+	//ADD_RESOURCE("Sky", CImage::CreateImage("Image/sky.png"));
+	ADD_RESOURCE("Ground", CImage::CreateImage("Image/ground.png"));
+	//ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/foreground.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/Play.png"));
 

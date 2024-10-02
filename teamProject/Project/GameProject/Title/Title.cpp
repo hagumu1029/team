@@ -1,5 +1,5 @@
 #include"Title.h"
-#include"../Game/Game.h"
+#include"Game/Game.h"
 #include"../Base/Base.h"
 Title::Title() :Base(eType_Scene),
 m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
@@ -16,7 +16,7 @@ void Title::Update()
 		//全てのオブジェクトを破棄
 		Base::KillAll();
 		//ゲームシーンへ
-		//Base::Add(new Game());
+		Base::Add(new Game());
 	}
 }
 
