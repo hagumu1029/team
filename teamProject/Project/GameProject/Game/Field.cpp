@@ -7,8 +7,7 @@ Field::Field() :Base(eType_Field) {
 	m_sky.SetSize(1920,1020);
 	m_background.SetSize(1980, 1012);
 	m_foreground.SetSize(1920,1020);
-	m_ground_y = 980;
-}
+	m_ground_y = 980;}
 void Field::Draw()
 {
 	float sc;

@@ -1,10 +1,10 @@
 #include "Base/Base.h"
 //--平山-------------------------------------------
 #include "Game/Player.h"
-
-
-
-
+#include "Game/Animdata.h"
+#include "Game/cannon.h"
+#include "Game/Bullet.h"
+#include "Game/Enemy.h"
 
 
 
@@ -100,12 +100,12 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 	//--平山-----------------------------------------------
-	Base::Add(new Player(CVector2D(200, 800)));
-
-
-
-
-
+	
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data,32,32 ));
+	Base::Add(new Player(CVector2D(200,350)));
+	ADD_RESOURCE("cannon", CImage::CreateImage("Image/cannon.png"));
+	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 
 
 

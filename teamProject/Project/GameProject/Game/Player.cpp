@@ -1,11 +1,12 @@
 #include "Player.h"
 #include "Field.h"
+#include "Animdata.h"
 
 void Player::StateIdle()
 {
 	const float move_speed = 6;
 	bool move_flag = false;
-	const float jump_pow = 12;
+	const float jump_pow = 16;
 	if (HOLD(CInput::eLeft)) {
 		m_pos.x += -move_speed;
 		m_flip = true;
@@ -20,42 +21,58 @@ void Player::StateIdle()
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
-
+	if (!m_is_ground) {
+		if (m_vec.y < 0)
+			m_img.ChangeAnimation(eAnimJumpUp, false);
+		else
+			m_img.ChangeAnimation(eAnimJumpDown, false);
+	}
+	else {
+		if (move_flag) {
+			m_img.ChangeAnimation(eAnimRun);
+		}
+		else {
+			m_img.ChangeAnimation(eAnimIdle);
+		}
+	}
 }
 
 
 	Player::Player(const CVector2D&p)
 	:Base(eType_Player){
-	m_img.Load("Image/pureiya(kari).png");
+	m_img=COPY_RESOURCE("Player", CImage);
+	m_img.ChangeAnimation(0);
 	m_pos_old = m_pos = p;
 	m_img.SetCenter(128, 224);
+	m_img.SetSize(150, 150);
 	m_state = eState_Idle;
 	m_is_ground = true;
 	m_damage_no = -1;
-	m_hp = 100;
+	m_hp = 150;
 }
 
 void Player::StateDamage()
 {
-	m_hp = 0;
+	m_hp = 150;
 }
 
 void Player::Update()
 {
 	m_pos_old = m_pos;
-	m_scroll.x = m_pos.x - 1280 / 2;
 	switch (m_state) {
 	case eState_Idle:
 		StateIdle();
 		break;
 	}
+
 	if (m_is_ground && m_vec.y > GRAVITY * 4)
 		m_is_ground = false;
-	    m_vec.y += GRAVITY;
-	    m_pos += m_vec;
-
-
+	m_vec.y += GRAVITY;
+	m_pos += m_vec;
+	m_img.UpdateAnimation();
+	m_scroll.x = m_pos.x - 1280 / 2;
 }
+
 
 void Player::Draw()
 {
