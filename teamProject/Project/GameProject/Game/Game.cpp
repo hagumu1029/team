@@ -13,6 +13,11 @@
 #include"Field.h"
 #include"../Title/Title.h"
 
+ Game::Game():Base(eType_Scene)
+{
+	 Base::Add(new Field());
+}
+
 void Game::Update()
 {
 	//ゴールが無ければゲームシーン終了
