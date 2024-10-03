@@ -4,9 +4,9 @@
 
 void Enemy::StateIdle()
 {
-	const float move_speed = 6;
+	const float move_speed = 2;
 	bool move_flag = false;
-	const float jump_pow = 12;
+	const float jump_pow = 20;
 	Base* player = Base::FindObject(eType_Player);
 	if (player) {
 		if (player->m_pos.x < m_pos.x - 64) {
@@ -22,13 +22,15 @@ void Enemy::StateIdle()
 	}
 
 	if (move_flag) {
-		m_img.ChangeAnimation(eAnimRun);
+		m_img.ChangeAnimation(eAnimStep);
 	}
 	else {
 		m_img.ChangeAnimation(eAnimIdle);
 	}
 
 }
+
+
 
 Enemy::Enemy(const CVector2D& p, bool flip)
 	:Base(eType_Enemy)
@@ -37,16 +39,17 @@ Enemy::Enemy(const CVector2D& p, bool flip)
 	m_img.ChangeAnimation(0);
 	m_pos = p;
 	m_img.SetCenter(128, 224);
+	m_img.SetSize(150, 150);
 	m_rect = CRect(-32, -128, 32, 0);
 	m_flip = flip;
-	m_state = eState_Idle;
+	m_state = eState_Run;
 	m_is_ground = true;
 }
 
 void Enemy::Update()
 {
 	switch (m_state) {
-	case eState_Idle:
+	case eState_Run:
 		StateIdle();
 		break;
 	}
@@ -66,5 +69,18 @@ void Enemy::Draw()
 
 void Enemy::Collision(Base* b)
 {
-	}
+	{
+		switch (b->m_type) {
+		case eType_Field:
+			if (Field* f = dynamic_cast<Field*>(b)) {
+				if (m_pos.y > f->GetGroundY()) {
+					m_pos.y = f->GetGroundY();
+					m_vec.y = 0;
+					m_is_ground = true;
+				}
+			}
+			break;
+		}
+	};
+}
 

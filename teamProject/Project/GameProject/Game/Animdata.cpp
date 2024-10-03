@@ -1,17 +1,25 @@
 #include "Animdata.h"
 
 
-static TexAnim playerstep[] = {
-	{ 24, 10},
-	{ 25 ,10},
-	{ 26 ,10},
-	{ 27 ,10},
-	{ 28 ,10},
-	{ 29 ,10},
-	{ 30 ,10},
-	{ 31 ,10},
+
+static TexAnim playerIdle[] = {
+	{ 0 ,10},
+	{ 1 ,10},
+	{ 8 ,10},
+	{ 9 ,10},
+	
 };
-static TexAnim playerJumpUp[] = { { 24, 6},
+static TexAnim playerStep[] = {
+	{ 24, 5},
+	{ 25 ,5},
+	{ 26 ,5},
+	{ 27 ,5},
+	{ 28 ,5},
+	{ 29 ,5},
+	{ 30 ,5},
+	{ 31 ,5},
+};
+static TexAnim playerJump[] = { 
 	{ 40,10},
 	{ 41 ,10},
 	{ 42 ,10},
@@ -20,36 +28,45 @@ static TexAnim playerJumpUp[] = { { 24, 6},
 	{ 45 ,10},
 	{ 46 ,10},
 };
-static TexAnim playerJumpDown[] = { { 24, 6},
-	{ 25 ,6},
-	{ 26 ,6},
-	{ 27 ,6},
-	{ 28 ,6},
-	{ 29 ,6},
-	{ 30 ,6},
-	{ 31 ,6}, };
-static TexAnim playerRun[] = { { 24, 6},
-	{ 25 ,6},
-	{ 26 ,6},
-	{ 27 ,6},
-	{ 28 ,6},
-	{ 29 ,6},
-	{ 30 ,6},
-	{ 31 ,6}, };
+
+static TexAnim playerDamage[] = {
+	{ 49 ,6},
+	{ 50 ,6},
+	{ 51 ,6},
+	{ 50 ,6},
+	{ 51 ,6},
+};
+
+static TexAnim playerDown[] ={
+	{ 57 ,6},
+	{ 58 ,6},
+	{ 59 ,6},
+	{ 60 ,6},
+	{ 61 ,6},
+	{ 62 ,6},
+	{ 63 ,6},
+	{ 64 ,6},
+};
 
 TexAnimData player_anim_data[] = {
-ANIMDATA(playerstep),
-ANIMDATA(playerRun),
-ANIMDATA(playerJumpUp),
-ANIMDATA(playerJumpDown),
+ANIMDATA(playerIdle),
+ANIMDATA(playerStep),
+ANIMDATA(playerJump),
+ANIMDATA(playerDamage),
+ANIMDATA(playerDown),
+};
 
-};
 static TexAnim enemyRun[] = {
-	{ 0, 10},
+	{ 0 ,10},
 	{ 1 ,10},
+	
 };
+
 static TexAnim enemyDown[] = {
-	{ 24, 10},
+	{ 5 ,10},
+	{ 6 ,10},
+	{ 7 ,10},
+	{ 8 ,10},
 };
 TexAnimData enemy_anim_data[] = {
 	ANIMDATA(enemyRun),

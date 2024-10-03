@@ -4,7 +4,7 @@
 
 void Player::StateIdle()
 {
-	const float move_speed = 6;
+	const float move_speed = 1;
 	bool move_flag = false;
 	const float jump_pow = 16;
 	if (HOLD(CInput::eLeft)) {
@@ -23,13 +23,12 @@ void Player::StateIdle()
 	}
 	if (!m_is_ground) {
 		if (m_vec.y < 0)
-			m_img.ChangeAnimation(eAnimJumpUp, false);
-		else
-			m_img.ChangeAnimation(eAnimJumpDown, false);
+			m_img.ChangeAnimation(eAnimJump);
+		
 	}
 	else {
 		if (move_flag) {
-			m_img.ChangeAnimation(eAnimRun);
+			m_img.ChangeAnimation(eAnimStep);
 		}
 		else {
 			m_img.ChangeAnimation(eAnimIdle);
@@ -54,6 +53,15 @@ void Player::StateIdle()
 void Player::StateDamage()
 {
 	m_hp = 150;
+}
+
+void Player::StateDown()
+{
+	m_img.ChangeAnimation(eAnimDown, false);
+	if (m_img.CheckAnimationEnd()) {
+		m_kill = true;
+	}
+
 }
 
 void Player::Update()
@@ -93,6 +101,4 @@ void Player::Collision(Base* b)
 		}
 		break;
 	}
-
-}
-;
+};

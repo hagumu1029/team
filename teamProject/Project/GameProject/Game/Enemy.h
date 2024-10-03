@@ -5,13 +5,13 @@
 class Enemy :public Base {
 private:
 	enum {
-		eState_Idle,
+		eState_Run,
+		eState_Down,
 	};
 	void StateIdle();
 	int m_state;
 	CImage m_img;
 	bool m_flip;
-	int m_attack_no;
 	bool m_is_ground;
 public:
 	Enemy(const CVector2D& p, bool flip);
