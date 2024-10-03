@@ -78,3 +78,16 @@ TexAnimData enemy_anim_data[] = {
 	ANIMDATA(enemyStep),
 	ANIMDATA(enemyDown),
 };
+
+static TexAnim cannonIdle[] = {
+	{ 12 ,10},
+	{ 13 ,10},
+	{ 14 ,10},
+	{ 15 ,10},
+	{ 16 ,10},
+	{ 17 ,10},
+};
+
+TexAnimData cannon_anim_data[] = {
+ANIMDATA(cannonIdle),
+};
