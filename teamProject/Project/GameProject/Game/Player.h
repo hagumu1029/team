@@ -14,6 +14,7 @@ private:
 	
 	void StateIdle();
 	void StateDamage();
+	void StateDown();
 public:
 	Player(const CVector2D& p);
 	void Update();
