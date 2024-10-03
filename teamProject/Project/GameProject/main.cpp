@@ -104,9 +104,9 @@ void Init(void)
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data,32,32 ));
 	Base::Add(new Player(CVector2D(100,1050)));
 	ADD_RESOURCE("cannon", CImage::CreateImage("Image/cannon.png"));
-	
+	Base::Add(new cannon(CVector2D(500, 1050),false));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
-	Base::Add(new Enemy(CVector2D(1000, 1050),true));
+	Base::Add(new Enemy(CVector2D(1000, 1050)));
 
 
 

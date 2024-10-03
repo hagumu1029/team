@@ -5,22 +5,21 @@
 void Enemy::StateIdle()
 {
 	const float move_speed = 2;
-	bool move_flag = false;
+	bool move_flag = true;
 	const float jump_pow = 20;
-	Base* player = Base::FindObject(eType_Player);
-	if (player) {
-		if (player->m_pos.x < m_pos.x - 64) {
-			m_pos.x += -move_speed;
-			m_flip = true;
-			move_flag = true;
-		}
-		if (player->m_pos.x > m_pos.x + 64) {
-			m_pos.x += move_speed;
-			m_flip = false;
-			move_flag = true;
-		}
-	}
-
+	//Base* player = Base::FindObject(eType_Player);
+	//if (player) {
+	//	if (player->m_pos.x < m_pos.x - 64) {
+	//		m_pos.x += -move_speed;
+	//		move_flag = true;
+	//	}
+	//	if (player->m_pos.x > m_pos.x + 64) {
+	//		m_pos.x += move_speed;
+	//		move_flag = true;
+	//	}
+	//}
+	m_pos.x += -move_speed;
+	move_flag = true;
 	if (move_flag) {
 		m_img.ChangeAnimation(eAnimStep);
 	}
@@ -32,7 +31,7 @@ void Enemy::StateIdle()
 
 
 
-Enemy::Enemy(const CVector2D& p, bool flip)
+Enemy::Enemy(const CVector2D& p)
 	:Base(eType_Enemy)
 {
 	m_img = COPY_RESOURCE("Enemy", CImage);
@@ -41,15 +40,14 @@ Enemy::Enemy(const CVector2D& p, bool flip)
 	m_img.SetCenter(128, 224);
 	m_img.SetSize(150, 150);
 	m_rect = CRect(-32, -128, 32, 0);
-	m_flip = flip;
-	m_state = eState_Run;
+	m_state = eState_Idle;
 	m_is_ground = true;
 }
 
 void Enemy::Update()
 {
 	switch (m_state) {
-	case eState_Run:
+	case eState_Idle:
 		StateIdle();
 		break;
 	}
@@ -63,7 +61,6 @@ void Enemy::Update()
 void Enemy::Draw()
 {
 	m_img.SetPos(GetScreenPos(m_pos));
-	m_img.SetFlipH(m_flip);
 	m_img.Draw();
 }
 

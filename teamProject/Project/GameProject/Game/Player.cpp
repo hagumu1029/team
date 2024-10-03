@@ -6,7 +6,7 @@ void Player::StateIdle()
 {
 	const float move_speed = 1;
 	bool move_flag = false;
-	const float jump_pow = 16;
+	const float jump_pow = 25;
 	if (HOLD(CInput::eLeft)) {
 		m_pos.x += -move_speed;
 		m_flip = true;
@@ -57,7 +57,7 @@ void Player::StateDamage()
 
 void Player::StateDown()
 {
-	m_img.ChangeAnimation(eAnimDown, false);
+	m_img.ChangeAnimation(eAnimDown, true);
 	if (m_img.CheckAnimationEnd()) {
 		m_kill = true;
 	}
