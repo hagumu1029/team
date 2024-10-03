@@ -11,6 +11,7 @@ Field::Field() :Base(eType_Field) {
 	m_foreground.SetSize(1920,1020);
 	m_ground_y = 980;
 }
+
 void Field::Draw()
 {
 	float sc;
