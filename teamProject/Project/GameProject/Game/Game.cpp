@@ -1,6 +1,6 @@
 //--•½ŽR--------------------------------------
 #include"Goal.h"
-
+#include"Map.h"
 
 
 
@@ -17,6 +17,9 @@
 {
 	 Base::Add(new Field());
 	 Base::Add(new Goal(CVector2D(512, 540)));
+	 Base::Add(new Map());
+ 
+
 }
 
 void Game::Update()

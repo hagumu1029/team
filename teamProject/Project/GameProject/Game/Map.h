@@ -12,9 +12,17 @@
 class Map : public Base {
 private:
     CImage m_img;
+    int m_stage_data[MAP_HEIGHT][MAP_WIDTH];
 public:
     Map();
     void Draw();
+    //指定座標のチップ番号を取得
+    int GetTip(const CVector2D& pos);
+    //指定列、指定行のマップチップを取得
+    int GetTip(int col, int row);
+    //マップとの当たり判定
+    int CollisionPoint(const CVector2D& pos);
+
 };
 
 

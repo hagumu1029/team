@@ -9,7 +9,7 @@
 
 
 
-
+#include"Game/Map.h"
 //--ëÂèü--------------------------------------------
 #include"Game/Field.h"
 #include"Title/Title.h"
@@ -124,9 +124,16 @@ void Init(void)
 	
 
 
+
+
+
+
+
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/pureiya(kari).png"));
+
 	Base::Add(new Field());
 	//Base::Add(new Title());
-
+	Base::Add(new Map());
 
 
 }
