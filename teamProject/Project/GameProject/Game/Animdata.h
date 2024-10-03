@@ -20,3 +20,4 @@ enum {
 };
 extern TexAnimData player_anim_data[];
 extern TexAnimData enemy_anim_data[];
+extern TexAnimData cannon_anim_data[];
