@@ -19,7 +19,7 @@ void Field::Draw()
 	m_background.SetRect(sc, 0, sc + 320, 180);
 	m_background.Draw();
 	
-	sc = m_scroll.x/2;
+	sc = m_scroll.x/3;
 	m_tree.SetRect(sc, 0, sc + 320, 180);
 	m_tree.Draw();
 
