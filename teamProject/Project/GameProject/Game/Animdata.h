@@ -2,18 +2,9 @@
 
 enum {
 	eAnimIdle = 0,
-	eAnimRun,
-	eAnimJumpUp,
-	eAnimJumpDown,
-	eAnimAttack01,
-	eAnimAttack01End,
-	eAnimAttack02,
-	eAnimAttack02End,
-	eAnimAttack03,
-	eAnimAttack03End,
+	eAnimStep,
+	eAnimJump,
 	eAnimDamage,
-	eAnimDamageEnd,
-	eAnimDeath,
 	eAnimDown,
 	eAnimDownGround,
 	eAnimWakeUp,
@@ -25,6 +16,7 @@ enum {
 	eAnimExtAttack01End,
 	eAnimExtAttack02,
 	eAnimExtAttack02End,
-	eAnimStep,
+
 };
 extern TexAnimData player_anim_data[];
+extern TexAnimData enemy_anim_data[];

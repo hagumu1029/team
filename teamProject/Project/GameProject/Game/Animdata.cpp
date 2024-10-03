@@ -7,7 +7,7 @@ static TexAnim playerIdle[] = {
 	{ 1 ,10},
 	{ 8 ,10},
 	{ 9 ,10},
-	
+
 };
 static TexAnim playerStep[] = {
 	{ 24, 5},
@@ -19,7 +19,7 @@ static TexAnim playerStep[] = {
 	{ 30 ,5},
 	{ 31 ,5},
 };
-static TexAnim playerJump[] = { 
+static TexAnim playerJump[] = {
 	{ 40,10},
 	{ 41 ,10},
 	{ 42 ,10},
@@ -37,7 +37,7 @@ static TexAnim playerDamage[] = {
 	{ 51 ,6},
 };
 
-static TexAnim playerDown[] ={
+static TexAnim playerDown[] = {
 	{ 57 ,6},
 	{ 58 ,6},
 	{ 59 ,6},
@@ -64,7 +64,7 @@ static TexAnim enemyIdle[] = {
 static TexAnim enemyStep[] = {
 	{ 0 ,10},
 	{ 1 ,10},
-	
+
 };
 
 static TexAnim enemyDown[] = {

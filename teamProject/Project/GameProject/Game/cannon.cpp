@@ -1,5 +1,6 @@
 #include "cannon.h"
-
+#include "Field.h"
+#include "Animdata.h"
 
 cannon::cannon(const CVector2D& pos, bool flip):Base(eType_cannon)
 {
