@@ -56,7 +56,12 @@ ANIMDATA(playerDamage),
 ANIMDATA(playerDown),
 };
 
-static TexAnim enemyRun[] = {
+static TexAnim enemyIdle[] = {
+	{ 0 ,10},
+	{ 1 ,10},
+
+};
+static TexAnim enemyStep[] = {
 	{ 0 ,10},
 	{ 1 ,10},
 	
@@ -69,6 +74,7 @@ static TexAnim enemyDown[] = {
 	{ 8 ,10},
 };
 TexAnimData enemy_anim_data[] = {
-	ANIMDATA(enemyRun),
+	ANIMDATA(enemyIdle),
+	ANIMDATA(enemyStep),
 	ANIMDATA(enemyDown),
 };

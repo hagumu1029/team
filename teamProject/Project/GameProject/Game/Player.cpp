@@ -57,7 +57,7 @@ void Player::StateDamage()
 
 void Player::StateDown()
 {
-	m_img.ChangeAnimation(eAnimDown, false);
+	m_img.ChangeAnimation(eAnimDown, true);
 	if (m_img.CheckAnimationEnd()) {
 		m_kill = true;
 	}
