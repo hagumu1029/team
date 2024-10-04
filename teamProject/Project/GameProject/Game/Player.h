@@ -4,6 +4,8 @@ class Player :public Base {
 private:
 	enum {
 		eState_Idle,
+		eState_Damage,
+		eState_Down,
 	};
 	int m_state;
 	CImage m_img;
@@ -11,6 +13,7 @@ private:
 	bool m_is_ground;
 	int m_damage_no;
 	int m_hp;
+	int m_invicible;
 	
 	void StateIdle();
 	void StateDamage();
