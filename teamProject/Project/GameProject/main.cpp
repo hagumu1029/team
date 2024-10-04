@@ -9,7 +9,7 @@
 
 
 
-
+#include"Game/Map.h"
 //--ëÂèü--------------------------------------------
 #include"Game/Field.h"
 #include"Title/Title.h"
@@ -103,11 +103,11 @@ void Init(void)
 	
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data,32,32 ));
 	Base::Add(new Player(CVector2D(100,1050)));
-	ADD_RESOURCE("cannon", CImage::CreateImage("Image/cannon.png"));
-	Base::Add(new cannon(CVector2D(500, 1050),false));
+	//ADD_RESOURCE("cannon", CImage::CreateImage("Image/cannon.png",cannon_anim_data,));
+	//Base::Add(new cannon(CVector2D(500, 1050),false));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
 	Base::Add(new Enemy(CVector2D(1000, 1050)));
-
+	Base::Add(new Enemy(CVector2D(1200, 1050)));
 
 
 
@@ -118,13 +118,22 @@ void Init(void)
 	ADD_RESOURCE("Tree", CImage::CreateImage("Image/3.Trees_front.png"));
 	ADD_RESOURCE("Ground", CImage::CreateImage("Image/2.Trees_back.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/4.Ground.png"));
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/Play.png"));
+	
 
+
+
+
+
+
+
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/pureiya(kari).png"));
 
 	Base::Add(new Field());
-	//Base::Add(new Title());
-
+	Base::Add(new Title());
+	Base::Add(new Map());
 
 
 }

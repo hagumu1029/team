@@ -11,19 +11,20 @@ Field::Field() :Base(eType_Field) {
 	m_foreground.SetSize(1920,1020);
 	m_ground_y = 980;
 }
+
 void Field::Draw()
 {
 	float sc;
 	m_sky.Draw();
-	sc = m_scroll.x/4;
+	sc = m_scroll.x/4 * (320.0 / 1920);
 	m_background.SetRect(sc, 0, sc + 320, 180);
 	m_background.Draw();
 	
-	sc = m_scroll.x/3;
+	sc = m_scroll.x/3 * (320.0 / 1920);
 	m_tree.SetRect(sc, 0, sc + 320, 180);
 	m_tree.Draw();
 
-	sc = m_scroll.x/1.5;
+	sc = m_scroll.x * 1 * (320.0 / 1920); 
 	m_foreground.SetRect(sc, 0, sc + 320, 180);
 	m_foreground.Draw();
 }

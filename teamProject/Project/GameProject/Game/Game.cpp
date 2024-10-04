@@ -1,6 +1,6 @@
 //--•½ŽR--------------------------------------
 #include"Goal.h"
-
+#include"Map.h"
 
 
 
@@ -12,11 +12,18 @@
 #include"Game.h"
 #include"Field.h"
 #include"../Title/Title.h"
+#include"Player.h"
+#include"Enemy.h"
 
  Game::Game():Base(eType_Scene)
 {
 	 Base::Add(new Field());
-	 Base::Add(new Goal(CVector2D(512, 540)));
+	 Base::Add(new Map());
+	 Base::Add(new Player(CVector2D(100, 1050)));
+	 Base::Add(new Enemy(CVector2D(1000, 1050)));
+	 Base::Add(new Goal(CVector2D(1000, 800)));
+
+
 }
 
 void Game::Update()
