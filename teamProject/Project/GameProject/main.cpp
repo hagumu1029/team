@@ -119,8 +119,8 @@ void Init(void)
 	ADD_RESOURCE("Ground", CImage::CreateImage("Image/2.Trees_back.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/4.Ground.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
-	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	ADD_RESOURCE("Play", CImage::CreateImage("Image/Play.png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/title yoketobi.png"));
+	ADD_RESOURCE("Play", CImage::CreateImage("Image/Push Start.png"));
 	
 
 
