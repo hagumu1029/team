@@ -16,7 +16,8 @@ enum {
     eType_UI,
     eType_Scene,
     eType_cannon,
-    eType_Map
+    eType_Map,
+    eType_Fruit,
 };
 //重力加速度
 #define GRAVITY (9.8f/20)
@@ -25,6 +26,7 @@ enum {
 /// </summary>
 class Base {
 public:
+    CImage m_img;
     //オブジェクトの種類
     int m_type;
     //座標データ

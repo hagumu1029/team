@@ -3,7 +3,7 @@
 #include "Game/Player.h"
 #include "Game/Animdata.h"
 #include "Game/cannon.h"
-
+#include "Game/Fruit.h"
 #include "Game/Enemy.h"
 
 
@@ -107,8 +107,8 @@ void Init(void)
 	//Base::Add(new cannon(CVector2D(500, 1050),false));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
 	Base::Add(new Enemy(CVector2D(1000, 1050)));
-	Base::Add(new Enemy(CVector2D(1200, 1050)));
-
+	ADD_RESOURCE("Fruit", CImage::CreateImage("Image/Fruit.png"));
+	Base::Add(new Enemy(CVector2D(1000, 1050)));
 
 
 
@@ -132,7 +132,7 @@ void Init(void)
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/pureiya(kari).png"));
 
 	Base::Add(new Field());
-	Base::Add(new Title());
+	//Base::Add(new Title());
 	Base::Add(new Map());
 
 
