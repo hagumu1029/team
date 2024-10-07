@@ -22,6 +22,7 @@ public:
     int GetTip(int col, int row);
     //ƒ}ƒbƒv‚Æ‚Ì“–‚½‚è”»’è
     int CollisionPoint(const CVector2D& pos);
+    int CollisionRect(const CVector2D& pos, const CRect& rect);
 
 };
 
