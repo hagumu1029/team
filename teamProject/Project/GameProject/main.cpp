@@ -129,7 +129,7 @@ void Init(void)
 
 
 
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/pureiya(kari).png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Map.png"));
 
 	Base::Add(new Field());
 	//Base::Add(new Title());
