@@ -4,9 +4,9 @@
 
 void Player::StateIdle()
 {
-	const float move_speed = 1;
+	const float move_speed = 3;
 	bool move_flag = false;
-	const float jump_pow = 25;
+	const float jump_pow = 15;
 	if (HOLD(CInput::eLeft)) {
 		m_pos.x += -move_speed;
 		m_flip = true;
@@ -48,16 +48,20 @@ void Player::StateIdle()
 	m_is_ground = true;
 	m_damage_no = -1;
 	m_hp = 150;
+	m_invicible = 0;
 }
 
-void Player::StateDamage()
-{
-	m_hp = 150;
-}
-
+	void Player::StateDamage()
+	{
+		m_img.ChangeAnimation(eAnimDamage, false);
+		if (m_img.CheckAnimationEnd()) {
+			m_state = eState_Idle;
+			m_is_ground = true;
+		}
+	}
 void Player::StateDown()
 {
-	m_img.ChangeAnimation(eAnimDown, true);
+	m_img.ChangeAnimation(eAnimDown, false);
 	if (m_img.CheckAnimationEnd()) {
 		m_kill = true;
 	}
@@ -71,8 +75,16 @@ void Player::Update()
 	case eState_Idle:
 		StateIdle();
 		break;
+	case eState_Damage:
+		StateDamage();
+		break;
+	case eState_Down:
+		StateDown();
+		break;
 	}
-
+	if (m_invicible >= 1) {
+		m_invicible -= 1;
+	}
 	if (m_is_ground && m_vec.y > GRAVITY * 4)
 		m_is_ground = false;
 	m_vec.y += GRAVITY;
@@ -90,7 +102,21 @@ void Player::Draw()
 }
 void Player::Collision(Base* b)
 {
-	switch (b->m_type) {
+	switch (b->m_type) 
+	case eType_Enemy:
+	{
+		if (Base::CollisionRect(this,b )) {
+			if (m_invicible <= 0) {
+				m_invicible = 120;
+				m_hp -= 50;
+				if (m_hp <= 0) {
+					m_state = eState_Down;
+				}
+				else {
+					m_state = eState_Damage;
+				}
+			}
+		}
 	case eType_Field:
 		if (Field* f = dynamic_cast<Field*>(b)) {
 			if (m_pos.y > f->GetGroundY()) {

@@ -3,7 +3,7 @@
 #include "Game/Player.h"
 #include "Game/Animdata.h"
 #include "Game/cannon.h"
-
+#include "Game/Fruit.h"
 #include "Game/Enemy.h"
 
 
@@ -107,8 +107,8 @@ void Init(void)
 	//Base::Add(new cannon(CVector2D(500, 1050),false));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
 	Base::Add(new Enemy(CVector2D(1000, 1050)));
-
-
+	ADD_RESOURCE("Fruit", CImage::CreateImage("Image/Fruit.png"));
+	Base::Add(new Enemy(CVector2D(1000, 1050)));
 
 
 
@@ -119,8 +119,8 @@ void Init(void)
 	ADD_RESOURCE("Ground", CImage::CreateImage("Image/2.Trees_back.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/4.Ground.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
-	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	ADD_RESOURCE("Play", CImage::CreateImage("Image/Play.png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/title yoketobi.png"));
+	ADD_RESOURCE("Play", CImage::CreateImage("Image/Push Start.png"));
 	
 
 

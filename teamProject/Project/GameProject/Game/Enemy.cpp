@@ -4,20 +4,9 @@
 
 void Enemy::StateIdle()
 {
-	const float move_speed = 2;
+	const float move_speed = 4;
 	bool move_flag = true;
 	const float jump_pow = 20;
-	//Base* player = Base::FindObject(eType_Player);
-	//if (player) {
-	//	if (player->m_pos.x < m_pos.x - 64) {
-	//		m_pos.x += -move_speed;
-	//		move_flag = true;
-	//	}
-	//	if (player->m_pos.x > m_pos.x + 64) {
-	//		m_pos.x += move_speed;
-	//		move_flag = true;
-	//	}
-	//}
 	m_pos.x += -move_speed;
 	move_flag = true;
 	if (move_flag) {
