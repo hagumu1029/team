@@ -16,7 +16,7 @@ void cannon::Update()
 {
 	m_img.UpdateAnimation();
 	if (m_img.CheckAnimationEnd()) {
-		SetKill();
+		//SetKill();
 	}
 }
 
