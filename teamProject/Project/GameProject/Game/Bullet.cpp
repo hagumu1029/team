@@ -1,18 +1,18 @@
 #include "Bullet.h"
 Bullet::Bullet(const CVector2D& pos) :Base(eType_Bullet)
 {
-	m_img.Load("Image/Bullet.png");
+	m_img=COPY_RESOURCE("Bullet",CImage);
 	m_pos = pos;
 	m_rad = 16;
 	m_rad = 12;
-	m_img.SetSize(32, 32);
-	m_img.SetCenter(16, 16);
+	m_img.SetSize(64,64);
+	m_img.SetCenter(32,32);
 }
 
 void Bullet::Update()
 {
 	const int move_speed = 4;
-	m_pos.y -= move_speed;
+	m_pos.x -= move_speed;
 }
 
 void Bullet::Draw()
