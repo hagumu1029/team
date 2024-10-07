@@ -12,7 +12,7 @@ m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 100)
 void Title::Update()
 {
 	//左クリックでタイトル破棄
-	if (m_cnt++ > 60 && PUSH(CInput::eMouseL)) {
+	if (m_cnt++ > 60 && PUSH(CInput::eButton5)) {
 		//全てのオブジェクトを破棄
 		Base::KillAll();
 		//ゲームシーンへ

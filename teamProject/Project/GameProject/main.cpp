@@ -123,7 +123,8 @@ void Init(void)
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/Push Start.png"));
 	
 
-
+	ADD_RESOURCE("cannon", CImage::CreateImage("Image/Cannon.png", cannon_anim_data,384/6,256/4 ));
+	Base::Add(new cannon(CVector2D(500, 1050),false));
 
 
 
