@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Field.h"
 #include "Animdata.h"
+#include "Map.h"
 
 void Player::StateIdle()
 {
@@ -102,9 +103,28 @@ void Player::Draw()
 }
 void Player::Collision(Base* b)
 {
-	switch (b->m_type) 
+	switch (b->m_type) {
+	case eType_Map:
+		if (Map* m = dynamic_cast<Map*>(b)) {
+			int t;
+			t = m->CollisionRect(CVector2D(m_pos.x, m_pos_old.y), m_rect);
+			if (t != 0) {
+				m_pos.x = m_pos_old.x;
+			}
+			t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y), m_rect);
+			if (t != 0) {
+				m_pos.y = m_pos_old.y;
+				//落下速度リセット
+				m_vec.y = 0;
+				//接地フラグON
+				m_is_ground = true;
+			}
+		}
+
+		break;
+	
 	case eType_Enemy:
-	{
+	
 		if (Base::CollisionRect(this,b )) {
 			if (m_invicible <= 0) {
 				m_invicible = 120;
