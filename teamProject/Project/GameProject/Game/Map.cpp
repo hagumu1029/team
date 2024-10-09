@@ -40,7 +40,7 @@ void Map::Draw()
             m_img.Draw();
         }
     }
-
+    DrawRect();
 }
 
 int Map::GetTip(const CVector2D& pos)

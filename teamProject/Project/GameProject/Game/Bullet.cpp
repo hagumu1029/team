@@ -19,7 +19,7 @@ void Bullet::Draw()
 {
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.Draw();
-	//Utility::DrawCircle(GetScreenPos(m_pos), m_rad, CVector4D(1,0,0,0.5));
+	Utility::DrawCircle(GetScreenPos(m_pos), m_rad, CVector4D(1,0,0,0.5));
 }
 
 void Bullet::Collision(Base* b)

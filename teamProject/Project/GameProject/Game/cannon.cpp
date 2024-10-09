@@ -12,7 +12,7 @@ cannon::cannon(const CVector2D& pos, bool flip):Base(eType_cannon)
 	m_img.SetCenter(128,128);
 	m_rect = CRect(-128, -128, 128, 128);
 	m_img.ChangeAnimation(0);
-	m_cnt = 110;
+	m_cnt = 100;
 }
 
 void cannon::Update()
@@ -24,7 +24,7 @@ void cannon::Update()
 	if (m_cnt <= 0)
 	{
 		Base::Add(new Bullet(m_pos));
-		m_cnt = 110;
+		m_cnt = 100;
 	}
 }
 
