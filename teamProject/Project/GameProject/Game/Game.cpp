@@ -15,6 +15,7 @@
 #include"Player.h"
 #include"Enemy.h"
 #include"cannon.h"
+#include"Bullet.h"
 
  Game::Game():Base(eType_Scene)
 {
@@ -24,7 +25,7 @@
 	 Base::Add(new Player(CVector2D(100, 450)));
 	 Base::Add(new Enemy(CVector2D(1000, 1050)));
 	 Base::Add(new cannon(CVector2D(500, 900), false));
-
+	 Base::Add(new Bullet(CVector2D(1000,800)));
 
 }
 
