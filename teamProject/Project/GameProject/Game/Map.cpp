@@ -6,6 +6,7 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
         { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         { 0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+        { 0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
        
 
@@ -25,34 +26,23 @@ Map::Map() : Base(eType_Map)
 
 void Map::Draw()
 {
-    int sx = m_scroll.x / MAP_TIP_SIZE;
-    if (sx < 0) sx = 0;
-    int ex = sx + 5;
-    if (ex > MAP_WIDTH) ex = MAP_WIDTH;
-    int sy = m_scroll.y / MAP_TIP_SIZE;
-    if (sy < 0) sy = 0;
-    int ey = sy + 5;
-    if (ey > MAP_HEIGHT) ey = MAP_HEIGHT;
     //マップチップによる表示の繰り返し
-    for (int i = sy; i < ey; i++) {
-        for (int j = sx; j < ex; j++)
-            //マップチップによる表示の繰り返し
-            for (int i = 0; i < MAP_HEIGHT; i++) {
-                for (int j = 0; j < MAP_WIDTH; j++) {
-                    if (stage1data[i][j] == 0)continue;
-                    int t = stage1data[i][j];
+    for (int i = 0; i < MAP_HEIGHT; i++) {
+        for (int j = 0; j < MAP_WIDTH; j++) {
+            if (stage1data[i][j] == 0)continue;
+            int t = stage1data[i][j];
 
-                    //画像切り抜き
-                    m_img.SetRect(32, 0, 32 + 32, 32);
-                    //表示サイズ設定
-                    m_img.SetSize(MAP_TIP_SIZE, MAP_TIP_SIZE);
-                    //表示位置設定
-                    m_img.SetPos(MAP_TIP_SIZE * j, MAP_TIP_SIZE * i);
-                    //描画
-                    m_img.Draw();
-                }
-            }
+            //画像切り抜き
+            m_img.SetRect(32, 0, 32 + 32, 32);
+            //表示サイズ設定
+            m_img.SetSize(MAP_TIP_SIZE, MAP_TIP_SIZE);
+            //表示位置設定
+            m_img.SetPos(MAP_TIP_SIZE * j-m_scroll.x, MAP_TIP_SIZE * i-m_scroll.y);
+            //描画
+            m_img.Draw();
+        }
     }
+
 }
 
 int Map::GetTip(const CVector2D& pos)

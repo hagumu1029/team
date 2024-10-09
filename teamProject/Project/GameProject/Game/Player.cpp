@@ -43,13 +43,15 @@ void Player::StateIdle()
 	m_img=COPY_RESOURCE("Player", CImage);
 	m_img.ChangeAnimation(0);
 	m_pos_old = m_pos = p;
-	m_img.SetCenter(128, 224);
+	m_img.SetCenter(128, 128);
 	m_img.SetSize(150, 150);
 	m_state = eState_Idle;
 	m_is_ground = true;
 	m_damage_no = -1;
 	m_hp = 150;
 	m_invicible = 0;
+	m_rect = CRect(-32, -128, 32, 0);
+
 }
 
 	void Player::StateDamage()
@@ -66,7 +68,7 @@ void Player::StateDown()
 	if (m_img.CheckAnimationEnd()) {
 		m_kill = true;
 	}
-
+	DrawRect();
 }
 
 void Player::Update()
@@ -92,6 +94,7 @@ void Player::Update()
 	m_pos += m_vec;
 	m_img.UpdateAnimation();
 	m_scroll.x = m_pos.x - 1280 / 2;
+	
 }
 
 
