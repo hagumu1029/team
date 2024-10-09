@@ -4,11 +4,11 @@
 Fruit::Fruit(const CVector2D& pos) : Base(eType_Fruit)
 {
 	m_img = COPY_RESOURCE("Fruit", CImage);
-	m_img.SetSize(20, 32);
+	m_img.SetSize(40, 40);
 	m_img.SetCenter(10, 16);
 	m_rect = CRect(-8, -14, 8, 14);
 	m_pos = pos;
-	m_FallSpeed = 10.0;
+	m_FallSpeed = 3.0;
 	m_rand = 0;
 	m_cnt = 0;
 }

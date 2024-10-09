@@ -108,7 +108,7 @@ void Init(void)
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
 	Base::Add(new Enemy(CVector2D(1000, 1050)));
 	ADD_RESOURCE("Fruit", CImage::CreateImage("Image/Fruit.png"));
-	Base::Add(new Enemy(CVector2D(1000, 1050)));
+	Base::Add(new Fruit(CVector2D(1000, 10)));
 
 
 
@@ -132,7 +132,7 @@ void Init(void)
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/pureiya(kari).png"));
 
 	Base::Add(new Field());
-	//Base::Add(new Title());
+	Base::Add(new Title());
 	Base::Add(new Map());
 
 
