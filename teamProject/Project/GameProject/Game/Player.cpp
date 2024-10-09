@@ -43,7 +43,7 @@ void Player::StateIdle()
 	m_img=COPY_RESOURCE("Player", CImage);
 	m_img.ChangeAnimation(0);
 	m_pos_old = m_pos = p;
-	m_img.SetCenter(128, 128);
+	m_img.SetCenter(75, 128);
 	m_img.SetSize(150, 150);
 	m_state = eState_Idle;
 	m_is_ground = true;
@@ -103,6 +103,7 @@ void Player::Draw()
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.SetFlipH(m_flip);
 	m_img.Draw();
+	//DrawRect();
 }
 void Player::Collision(Base* b)
 {
