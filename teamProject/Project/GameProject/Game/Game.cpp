@@ -24,8 +24,8 @@
 	 Base::Add(new Goal(CVector2D(1000, 900)));
 	 Base::Add(new Player(CVector2D(100, 450)));
 	 Base::Add(new Enemy(CVector2D(1000, 1050)));
-	 Base::Add(new cannon(CVector2D(500, 900), false));
-	 Base::Add(new Bullet(CVector2D(1000,800)));
+	 Base::Add(new cannon(CVector2D(500, 800), false));
+	 //Base::Add(new Bullet(CVector2D(1000,800)));
 
 }
 
