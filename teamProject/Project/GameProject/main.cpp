@@ -51,8 +51,6 @@
 
 
 
-
-
 void MainLoop(void) {
 	//--------------------------------------------------------------
 	//ƒQ[ƒ€’†‚Ì“®‚«‚Í‚±‚±‚É‘‚­
@@ -127,6 +125,8 @@ void Init(void)
 
 	ADD_RESOURCE("cannon", CImage::CreateImage("Image/Cannon.png", cannon_anim_data,384/6,256/4 ));
 	//Base::Add(new cannon(CVector2D(500, 800),false));
+
+	
 
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
 

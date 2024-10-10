@@ -9,6 +9,7 @@ class Title :public Base {
 	CFont m_title_text;
 	//‘Ò‚¿ŽžŠÔ
 	int m_cnt;
+	int m_fruit_cnt;
 public:
 	Title();
 	void Update();
