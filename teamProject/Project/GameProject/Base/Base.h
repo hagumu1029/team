@@ -18,7 +18,6 @@ enum {
     eType_Map,
     eType_Scene,
     eType_Fruit,
-    eType_UI,
     eType_cannon2,
 };
 //d—Í‰Á‘¬“x
