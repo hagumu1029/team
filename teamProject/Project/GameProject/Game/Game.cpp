@@ -29,9 +29,12 @@
 	 Base::Add(new cannon(CVector2D(1300, 800), false));
 	 Base::Add(new cannon(CVector2D(6700, 680), false));
 	 Base::Add(new cannon2(CVector2D(6500, 680), false));
+
+
 	 //Base::Add(new Bullet(CVector2D(1000,800)));
 	 m_cnt = 60 * 1;
 	 m_enemy_cnt = 60 * 5;
+	 m_img = COPY_RESOURCE("clear", CImage);
 }
 
 void Game::Update()
@@ -41,7 +44,7 @@ void Game::Update()
 		//全てのオブジェクトを破棄
 		Base::KillAll();
 		//タイトルシーンへ
-		Base::Add(new Title());
+		m_img.Draw();
 	}
 	//プレイヤー死亡　ボタン1でゲームシーン終了
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton5)) {
@@ -50,7 +53,6 @@ void Game::Update()
 		//タイトルシーンへ
 		Base::Add(new Title());
 		Base::Add(new Field());
-		Base::Add(new Map());
 		Base::Add(new Player(CVector2D(100, 450)));
 	}
 	m_cnt--;
