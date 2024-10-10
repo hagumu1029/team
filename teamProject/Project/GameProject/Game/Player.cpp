@@ -6,9 +6,9 @@
 
 void Player::StateIdle()
 {
-	const float move_speed = 3;
+	const float move_speed = 3.5;
 	bool move_flag = false;
-	const float jump_pow = 15;
+	const float jump_pow = 17.5;
 	if (HOLD(CInput::eLeft)) {
 		m_pos.x += -move_speed;
 		m_flip = true;
