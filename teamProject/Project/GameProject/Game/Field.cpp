@@ -9,7 +9,7 @@ Field::Field() :Base(eType_Field) {
 	m_tree.SetSize(1920, 1020);
 	m_background.SetSize(1920, 1020);
 	m_foreground.SetSize(1920,1020);
-	m_ground_y = 980;
+	m_ground_y = 880;
 }
 
 void Field::Draw()

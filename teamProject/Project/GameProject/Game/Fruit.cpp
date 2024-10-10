@@ -27,7 +27,7 @@ Fruit::Fruit(const CVector2D& pos) : Base(eType_Fruit)
 		break;
 	}
 	m_pos = pos;
-	m_FallSpeed = 3.5;
+	m_FallSpeed = 7.5;
 	m_rand = 0;
 	m_cnt = 0;
 }
