@@ -39,7 +39,7 @@ void Bullet::Collision(Base* b)
 				int t;
 				t = m->CollisionRect(CVector2D(m_pos.x, m_pos.y), m_rect);
 				if (t != 0) {
-					m_pos.x = m_pos_old.x;
+					//m_pos.x = m_pos_old.x;
 					SetKill();
 				}
 				

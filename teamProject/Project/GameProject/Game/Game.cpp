@@ -54,6 +54,8 @@ void Game::Update()
 	if (m_cnt <= 0) {
 		m_cnt = 20;
 		Base::Add(new Fruit(CVector2D(Utility::Rand(0, 1920)+m_scroll.x, 0)));
+		m_cnt = 60 * 5;
+		Base::Add(new Enemy(CVector2D(Utility::Rand(0, 1920) + m_scroll.x, 0)));
 	}
 }
 
