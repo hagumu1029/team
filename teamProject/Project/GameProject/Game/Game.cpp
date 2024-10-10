@@ -2,6 +2,7 @@
 #include"Goal.h"
 #include"Map.h"
 #include"Fruit.h"
+#include"cannon2.h"
 
 
 
@@ -22,11 +23,12 @@
 {
 	Base::Add(new Field());
 	 Base::Add(new Map());
-	 Base::Add(new Goal(CVector2D(10000, 900)));
+	 Base::Add(new Goal(CVector2D(8000, 680)));
 	 Base::Add(new Player(CVector2D(6150, 680)));
 	 //Base::Add(new Enemy(CVector2D(1000, 1050)));
 	 Base::Add(new cannon(CVector2D(1300, 800), false));
 	 Base::Add(new cannon(CVector2D(6700, 680), false));
+	 Base::Add(new cannon2(CVector2D(6500, 680), false));
 	 //Base::Add(new Bullet(CVector2D(1000,800)));
 	 m_cnt = 60 * 1;
 	 m_enemy_cnt = 60 * 5;
