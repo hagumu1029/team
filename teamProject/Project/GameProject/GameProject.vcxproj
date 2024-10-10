@@ -14,6 +14,7 @@
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game\Animdata.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
+    <ClCompile Include="Game\Bullet2.cpp" />
     <ClCompile Include="Game\cannon.cpp" />
     <ClCompile Include="Game\cannon2.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game\Animdata.h" />
     <ClInclude Include="Game\Bullet.h" />
+    <ClInclude Include="Game\Bullet2.h" />
     <ClInclude Include="Game\cannon.h" />
     <ClInclude Include="Game\cannon2.h" />
     <ClInclude Include="Game\Enemy.h" />
