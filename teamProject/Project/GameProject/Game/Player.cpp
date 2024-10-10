@@ -51,7 +51,7 @@ void Player::StateIdle()
 	m_damage_no = -1;
 	m_hp = 150;
 	m_invicible = 0;
-	m_rect = CRect(-70, -128, 70, 0);
+	m_rect = CRect(-35, -110, 35, 20);
 
 }
 
@@ -69,7 +69,7 @@ void Player::StateDown()
 	if (m_img.CheckAnimationEnd()) {
 		m_kill = true;
 	}
-	DrawRect();
+	//DrawRect();
 }
 
 void Player::Update()

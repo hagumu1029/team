@@ -31,7 +31,6 @@ void Bullet::Collision(Base* b)
 		case eType_Player:
 			if (Base::CollisionRect(this, b))
 			{
-				b->SetKill();
 				SetKill();
 			}
 			break;
