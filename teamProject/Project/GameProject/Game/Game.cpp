@@ -18,6 +18,7 @@
 #include"Enemy.h"
 #include"cannon.h"
 #include"Bullet.h"
+#include"UI.h"
 
 Game::Game() :Base(eType_Scene)
 {
@@ -29,7 +30,7 @@ Game::Game() :Base(eType_Scene)
 	Base::Add(new cannon(CVector2D(1300, 800), false));
 	Base::Add(new cannon(CVector2D(6700, 680), false));
 	Base::Add(new cannon2(CVector2D(6500, 680), false));
-
+	Base::Add(new UI());
 
 	//Base::Add(new Bullet(CVector2D(1000,800)));
 	m_cnt = 60 * 1;
@@ -38,13 +39,8 @@ Game::Game() :Base(eType_Scene)
 
 void Game::Update()
 {
-	//ゴールが無ければゲームシーン終了
-	if (!Base::FindObject(eType_Goal)) {
-		//全てのオブジェクトを破棄
-		Base::KillAll();
-		//タイトルシーンへ
-		Base::Add(new Title());
-	}
+
+
 	//プレイヤー死亡　ボタン1でゲームシーン終了
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton5)) {
 		//全てのオブジェクトを破棄

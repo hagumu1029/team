@@ -13,7 +13,7 @@
 //--‘åŸ--------------------------------------------
 #include"Game/Field.h"
 #include"Title/Title.h"
-
+#include"Game/UI.h"
 
 
 
@@ -140,6 +140,7 @@ void Init(void)
 	Base::Add(new Field());
 	Base::Add(new Title());
 	//Base::Add(new Map());
+	//Base::Add(new UI());
 
 
 }
