@@ -2,6 +2,7 @@
 #include "Field.h"
 #include "Animdata.h"
 #include "Map.h"
+#include "Fruit.h"
 
 void Player::StateIdle()
 {
@@ -125,6 +126,22 @@ void Player::Collision(Base* b)
 			}
 		}
 	case eType_Fruit:
+		if (Base::CollisionRect(this, b)) {
+			if (m_invicible <= 0) {
+				m_invicible = 120;
+				m_hp -= 50;
+				if (m_hp <= 0) {
+					m_state = eState_Down;
+				}
+				else {
+					m_state = eState_Damage;
+				}
+			}
+		}
+
+		break;
+
+	case eType_Bullet:
 		if (Base::CollisionRect(this, b)) {
 			if (m_invicible <= 0) {
 				m_invicible = 120;
