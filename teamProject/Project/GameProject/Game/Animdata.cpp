@@ -80,13 +80,28 @@ TexAnimData enemy_anim_data[] = {
 };
 
 static TexAnim cannonIdle[] = {
-	{ 6 ,10},
+	
 	{ 7 ,10},
 	{ 8 ,10},
 	{ 9 ,10},
-	{ 10 ,120},
+	{ 10 ,10},
+	{ 6 ,120},
 };
 
 TexAnimData cannon_anim_data[] = {
+ANIMDATA(cannonIdle),
+};
+
+static TexAnim cannon2Idle[] = {
+	
+	{ 13 ,10},
+	{ 14 ,10},
+	{ 15 ,10},
+	{ 16 ,10},
+	{ 17 ,10},
+	{ 12 ,120},
+};
+
+	TexAnimData cannon2_anim_data[] = {
 ANIMDATA(cannonIdle),
 };

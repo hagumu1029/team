@@ -138,7 +138,7 @@ void Init(void)
 
 	Base::Add(new Field());
 	Base::Add(new Title());
-	Base::Add(new Map());
+	//Base::Add(new Map());
 
 
 }
