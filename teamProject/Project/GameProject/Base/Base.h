@@ -14,10 +14,10 @@ enum {
     eType_Enemy_Attack,
     eType_Effect,
     eType_UI,
-    eType_Scene,
     eType_cannon,
     eType_Map,
     eType_Fruit,
+    eType_Scene,
 };
 //èdóÕâ¡ë¨ìx
 #define GRAVITY (9.8f/20)
