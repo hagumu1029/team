@@ -121,6 +121,7 @@ void Init(void)
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/title yoketobi.png"));
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/Push Start.png"));
+	ADD_RESOURCE("clear", CImage::CreateImage("Image/CLEAR.png"));
 	
 
 	ADD_RESOURCE("cannon", CImage::CreateImage("Image/Cannon.png", cannon_anim_data,384/6,256/4 ));

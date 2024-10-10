@@ -25,7 +25,7 @@ void cannon2::Update()
 	m_cnt--;
 	if (m_cnt <= 0)
 	{
-		Base::Add(new Bullet2(m_pos));
+		Base::Add(new Bullet2(m_pos,CVector2D(-3,-3)));
 		m_cnt = 160;
 	}
 }
