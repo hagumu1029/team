@@ -3,10 +3,29 @@
 
 Fruit::Fruit(const CVector2D& pos) : Base(eType_Fruit)
 {
-	m_img = COPY_RESOURCE("Fruit", CImage);
-	m_img.SetSize(40, 40);
-	m_img.SetCenter(10, 16);
-	m_rect = CRect(-8, -14, 8, 14);
+	int r = rand() % 3;
+	switch (r) {
+	case 0:
+		m_img = COPY_RESOURCE("banana", CImage);
+		m_img.SetSize(50, 50);
+		m_img.SetCenter(10, 16);
+		m_rect = CRect(-8, -14, 8, 14);
+		break;
+
+	case 1:
+		m_img = COPY_RESOURCE("Apple", CImage);
+		m_img.SetSize(50, 50);
+		m_img.SetCenter(10, 16);
+		m_rect = CRect(-8, -14, 8, 14);
+		break;
+
+	case 2:
+		m_img = COPY_RESOURCE("berry", CImage);
+		m_img.SetSize(50, 50);
+		m_img.SetCenter(10, 16);
+		m_rect = CRect(-8, -14, 8, 14);
+		break;
+	}
 	m_pos = pos;
 	m_FallSpeed = 3.5;
 	m_rand = 0;
