@@ -6,8 +6,9 @@ private:
 	CImage m_img;
 	bool m_flip;
 	int m_cnt;
+	bool m_flipV;
 public:
-	cannon2(const CVector2D& pos, bool flip);
+	cannon2(const CVector2D& pos, bool flip,bool flipV);
 	void Update();
 	void Draw();
 };
