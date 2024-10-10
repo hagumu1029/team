@@ -84,7 +84,7 @@ static TexAnim cannonIdle[] = {
 	{ 7 ,10},
 	{ 8 ,10},
 	{ 9 ,10},
-	{ 10 ,60},
+	{ 10 ,120},
 };
 
 TexAnimData cannon_anim_data[] = {
