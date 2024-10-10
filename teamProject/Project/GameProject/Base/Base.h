@@ -16,8 +16,8 @@ enum {
     eType_UI,
     eType_cannon,
     eType_Map,
-    eType_Fruit,
     eType_Scene,
+    eType_Fruit,
 };
 //d—Í‰Á‘¬“x
 #define GRAVITY (9.8f/20)
