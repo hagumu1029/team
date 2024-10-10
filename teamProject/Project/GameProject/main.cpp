@@ -132,7 +132,7 @@ void Init(void)
 
 
 
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Map.png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/1.Map(2).png"));
 
 	Base::Add(new Field());
 	Base::Add(new Title());
