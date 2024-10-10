@@ -106,11 +106,11 @@ void Init(void)
 	//ADD_RESOURCE("cannon", CImage::CreateImage("Image/cannon.png",cannon_anim_data,));
 	//Base::Add(new cannon(CVector2D(500, 1050),false));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
-	Base::Add(new Enemy(CVector2D(1000, 1050)));
+	//Base::Add(new Enemy(CVector2D(1000, 1050)));
 	ADD_RESOURCE("banana", CImage::CreateImage("Image/banana.png"));
 	ADD_RESOURCE("Apple", CImage::CreateImage("Image/05.png"));
 	ADD_RESOURCE("berry", CImage::CreateImage("Image/01.png"));
-	Base::Add(new Fruit(CVector2D(1000, 10)));
+	//Base::Add(new Fruit(CVector2D(1000, 10)));
 
 
 

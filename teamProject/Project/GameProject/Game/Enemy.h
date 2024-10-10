@@ -13,8 +13,9 @@ private:
 	int m_state;
 	CImage m_img;
 	bool m_is_ground;
+	bool m_flip;
 public:
-	Enemy(const CVector2D& p);
+	Enemy(const CVector2D& p,bool flip);
 	void Update();
 	void Draw();
 	void Collision(Base* b);

@@ -191,5 +191,11 @@ void Player::Collision(Base* b)
 			}
 		}
 		break;
+	case eType_Goal:
+		if (Base::CollisionRect(this, b)) {
+			//Base::KillAll();
+		}
+
+		break;
 	}
 };
