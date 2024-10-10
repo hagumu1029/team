@@ -2,6 +2,7 @@
 #include "Field.h"
 #include "Animdata.h"
 #include "Map.h"
+#include "Fruit.h"
 
 void Player::StateIdle()
 {
@@ -50,7 +51,7 @@ void Player::StateIdle()
 	m_damage_no = -1;
 	m_hp = 150;
 	m_invicible = 0;
-	m_rect = CRect(-32, -128, 32, 0);
+	m_rect = CRect(-70, -128, 70, 0);
 
 }
 
@@ -122,6 +123,35 @@ void Player::Collision(Base* b)
 				m_vec.y = 0;
 				//ê⁄ínÉtÉâÉOON
 				m_is_ground = true;
+			}
+		}
+	case eType_Fruit:
+		if (Base::CollisionRect(this, b)) {
+			if (m_invicible <= 0) {
+				m_invicible = 120;
+				m_hp -= 50;
+				if (m_hp <= 0) {
+					m_state = eState_Down;
+				}
+				else {
+					m_state = eState_Damage;
+				}
+			}
+		}
+
+		break;
+
+	case eType_Bullet:
+		if (Base::CollisionRect(this, b)) {
+			if (m_invicible <= 0) {
+				m_invicible = 120;
+				m_hp -= 50;
+				if (m_hp <= 0) {
+					m_state = eState_Down;
+				}
+				else {
+					m_state = eState_Damage;
+				}
 			}
 		}
 
