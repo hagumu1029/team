@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Field.h"
 #include "Animdata.h"
+#include "Map.h"
 
 void Player::StateIdle()
 {
@@ -42,13 +43,15 @@ void Player::StateIdle()
 	m_img=COPY_RESOURCE("Player", CImage);
 	m_img.ChangeAnimation(0);
 	m_pos_old = m_pos = p;
-	m_img.SetCenter(128, 224);
+	m_img.SetCenter(75, 128);
 	m_img.SetSize(150, 150);
 	m_state = eState_Idle;
 	m_is_ground = true;
 	m_damage_no = -1;
 	m_hp = 150;
 	m_invicible = 0;
+	m_rect = CRect(-32, -128, 32, 0);
+
 }
 
 	void Player::StateDamage()
@@ -65,7 +68,7 @@ void Player::StateDown()
 	if (m_img.CheckAnimationEnd()) {
 		m_kill = true;
 	}
-
+	DrawRect();
 }
 
 void Player::Update()
@@ -91,6 +94,7 @@ void Player::Update()
 	m_pos += m_vec;
 	m_img.UpdateAnimation();
 	m_scroll.x = m_pos.x - 1280 / 2;
+	
 }
 
 
@@ -99,12 +103,32 @@ void Player::Draw()
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.SetFlipH(m_flip);
 	m_img.Draw();
+	//DrawRect();
 }
 void Player::Collision(Base* b)
 {
-	switch (b->m_type) 
+	switch (b->m_type) {
+	case eType_Map:
+		if (Map* m = dynamic_cast<Map*>(b)) {
+			int t;
+			t = m->CollisionRect(CVector2D(m_pos.x, m_pos_old.y), m_rect);
+			if (t != 0) {
+				m_pos.x = m_pos_old.x;
+			}
+			t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y), m_rect);
+			if (t != 0) {
+				m_pos.y = m_pos_old.y;
+				//落下速度リセット
+				m_vec.y = 0;
+				//接地フラグON
+				m_is_ground = true;
+			}
+		}
+
+		break;
+	
 	case eType_Enemy:
-	{
+	
 		if (Base::CollisionRect(this,b )) {
 			if (m_invicible <= 0) {
 				m_invicible = 120;

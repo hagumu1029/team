@@ -1,7 +1,19 @@
 #include "Map.h"
 static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
+      { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        { 0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
       
+
+
 };
+
+
 Map::Map() : Base(eType_Map)
 {
 
@@ -23,11 +35,12 @@ void Map::Draw()
             //表示サイズ設定
             m_img.SetSize(MAP_TIP_SIZE, MAP_TIP_SIZE);
             //表示位置設定
-            m_img.SetPos(MAP_TIP_SIZE * j, MAP_TIP_SIZE * i);
+            m_img.SetPos(MAP_TIP_SIZE * j-m_scroll.x, MAP_TIP_SIZE * i-m_scroll.y);
             //描画
             m_img.Draw();
         }
     }
+    DrawRect();
 }
 
 int Map::GetTip(const CVector2D& pos)
@@ -56,6 +69,25 @@ int Map::CollisionPoint(const CVector2D& pos)
 {
     //1点のみ検証
     int t = GetTip(pos);
+    if (t != 0) return t;
+    return 0;
+}
+
+int Map::CollisionRect(const CVector2D& pos, const CRect& rect)
+{
+    CRect r = CRect(
+        pos.x + rect.m_left,
+        pos.y + rect.m_top,
+        pos.x + rect.m_right,
+        pos.y + rect.m_bottom);
+    int t;
+    t = CollisionPoint(CVector2D(r.m_left, r.m_top));
+    if (t != 0) return t;
+    t = CollisionPoint(CVector2D(r.m_right, r.m_top));
+    if (t != 0) return t;
+    t = CollisionPoint(CVector2D(r.m_left, r.m_bottom));
+    if (t != 0) return t;
+    t = CollisionPoint(CVector2D(r.m_right, r.m_bottom));
     if (t != 0) return t;
     return 0;
 }

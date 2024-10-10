@@ -102,7 +102,7 @@ void Init(void)
 	//--•½ŽR-----------------------------------------------
 	
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data,32,32 ));
-	Base::Add(new Player(CVector2D(100,1050)));
+	Base::Add(new Player(CVector2D(100,850)));
 	//ADD_RESOURCE("cannon", CImage::CreateImage("Image/cannon.png",cannon_anim_data,));
 	//Base::Add(new cannon(CVector2D(500, 1050),false));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png",enemy_anim_data,32,32));
@@ -123,13 +123,16 @@ void Init(void)
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/Push Start.png"));
 	
 
+	ADD_RESOURCE("cannon", CImage::CreateImage("Image/Cannon.png", cannon_anim_data,384/6,256/4 ));
+	//Base::Add(new cannon(CVector2D(500, 800),false));
+
+	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
 
 
 
 
 
-
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/pureiya(kari).png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Map.png"));
 
 	Base::Add(new Field());
 	Base::Add(new Title());
