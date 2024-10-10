@@ -4,7 +4,7 @@
 
 void Enemy::StateIdle()
 {
-	const float move_speed = 4;
+	const float move_speed = 6;
 	bool move_flag = true;
 	const float jump_pow = 20;
 	if(m_flip == false)

@@ -6,7 +6,7 @@
 
 void Player::StateIdle()
 {
-	const float move_speed = 10;
+	const float move_speed = 4;
 	bool move_flag = false;
 	const float jump_pow = 17.5;
 	if (HOLD(CInput::eLeft)) {
@@ -49,7 +49,7 @@ void Player::StateIdle()
 	m_state = eState_Idle;
 	m_is_ground = true;
 	m_damage_no = -1;
-	m_hp = 150;
+	m_hp = 250;
 	m_invicible = 0;
 	m_rect = CRect(-35, -110, 35, 20);
 

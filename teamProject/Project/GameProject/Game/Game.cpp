@@ -25,16 +25,18 @@ Game::Game() :Base(eType_Scene)
 	Base::Add(new Field());
 	Base::Add(new Map());
 	Base::Add(new Goal(CVector2D(8000, 680)));
-	Base::Add(new Player(CVector2D(6150, 680)));
+	Base::Add(new Player(CVector2D(200, 680)));
 	//Base::Add(new Enemy(CVector2D(1000, 1050)));
 	Base::Add(new cannon(CVector2D(1300, 800), false));
 	Base::Add(new cannon(CVector2D(6700, 680), false));
-	Base::Add(new cannon2(CVector2D(6500, 680), true, true));
+	Base::Add(new cannon2(CVector2D(600, 475), true, true));
+	Base::Add(new cannon2(CVector2D(3525, 345), true, true));
+	Base::Add(new cannon2(CVector2D(6600, 345), true, true));
 	Base::Add(new UI());
 
 	//Base::Add(new Bullet(CVector2D(1000,800)));
 	m_cnt = 60 * 1;
-	m_enemy_cnt = 60 * 5;
+	m_enemy_cnt = 60 * 7;
 }
 
 void Game::Update()
@@ -52,12 +54,12 @@ void Game::Update()
 	}
 	m_cnt--;
 	if (m_cnt <= 0) {
-		m_cnt = 20;
+		m_cnt = 45;
 		Base::Add(new Fruit(CVector2D(Utility::Rand(0, 1920)+m_scroll.x, 0)));
 	}
 	m_enemy_cnt--;
 	if (m_enemy_cnt <= 0) {
-		m_enemy_cnt = 60*5;
+		m_enemy_cnt = 60*7;
 
 		Base::Add(new Enemy(CVector2D(1920 + m_scroll.x, 800), false));
 		Base::Add(new Enemy(CVector2D(0 + m_scroll.x, 800), true));
