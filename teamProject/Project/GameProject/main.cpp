@@ -126,6 +126,7 @@ void Init(void)
 
 	ADD_RESOURCE("cannon", CImage::CreateImage("Image/Cannon.png", cannon_anim_data,384/6,256/4 ));
 	//Base::Add(new cannon(CVector2D(500, 800),false));
+	ADD_RESOURCE("cannon2", CImage::CreateImage("Image/Cannon.png", cannon2_anim_data, 384 / 6, 256 / 4));
 
 	
 

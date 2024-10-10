@@ -1,9 +1,10 @@
 #include "Bullet2.h"
 #include"Map.h"
-Bullet2::Bullet2(const CVector2D& pos) :Base(eType_Bullet)
+Bullet2::Bullet2(const CVector2D& pos,CVector2D vec) :Base(eType_Bullet)
 {
 	m_img = COPY_RESOURCE("Bullet", CImage);
 	m_pos = pos;
+	m_vec = vec;
 	m_rad = 16;
 	m_rad = 32;
 	m_img.SetSize(256, 256);
@@ -14,7 +15,7 @@ Bullet2::Bullet2(const CVector2D& pos) :Base(eType_Bullet)
 void Bullet2::Update()
 {
 	const int move_speed = 4;
-	m_pos.x -= move_speed;
+	m_pos -= m_vec;
 }
 
 void Bullet2::Draw()
