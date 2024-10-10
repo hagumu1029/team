@@ -90,3 +90,16 @@ static TexAnim cannonIdle[] = {
 TexAnimData cannon_anim_data[] = {
 ANIMDATA(cannonIdle),
 };
+
+static TexAnim cannon2Idle[] = {
+	{ 12 ,10},
+	{ 13 ,10},
+	{ 14 ,10},
+	{ 15 ,10},
+	{ 16 ,10},
+	{ 17 ,120},
+};
+
+	TexAnimData cannon2_anim_data[] = {
+ANIMDATA(cannonIdle),
+};

@@ -15,6 +15,7 @@
     <ClCompile Include="Game\Animdata.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
     <ClCompile Include="Game\cannon.cpp" />
+    <ClCompile Include="Game\cannon2.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\Field.cpp" />
     <ClCompile Include="Game\Fruit.cpp" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Game\Animdata.h" />
     <ClInclude Include="Game\Bullet.h" />
     <ClInclude Include="Game\cannon.h" />
+    <ClInclude Include="Game\cannon2.h" />
     <ClInclude Include="Game\Enemy.h" />
     <ClInclude Include="Game\Field.h" />
     <ClInclude Include="Game\Fruit.h" />

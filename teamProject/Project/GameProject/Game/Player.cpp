@@ -6,7 +6,7 @@
 
 void Player::StateIdle()
 {
-	const float move_speed = 3.5;
+	const float move_speed = 10;
 	bool move_flag = false;
 	const float jump_pow = 17.5;
 	if (HOLD(CInput::eLeft)) {
