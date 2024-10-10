@@ -1,4 +1,5 @@
 #include "Bullet.h"
+#include"Map.h"
 Bullet::Bullet(const CVector2D& pos) :Base(eType_Bullet)
 {
 	m_img=COPY_RESOURCE("Bullet",CImage);
@@ -7,6 +8,7 @@ Bullet::Bullet(const CVector2D& pos) :Base(eType_Bullet)
 	m_rad = 32;
 	m_img.SetSize(256,256);
 	m_img.SetCenter(128,128);
+	m_rect = CRect(-32, -32, 32, 32);
 }
 
 void Bullet::Update()
@@ -19,7 +21,7 @@ void Bullet::Draw()
 {
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.Draw();
-	Utility::DrawCircle(GetScreenPos(m_pos), m_rad, CVector4D(1,0,0,0.5));
+	//DrawRect();
 }
 
 void Bullet::Collision(Base* b)
@@ -27,11 +29,23 @@ void Bullet::Collision(Base* b)
 	{
 		switch (b->m_type) {
 		case eType_Player:
-			if (Base::CollisionCircle(this, b))
+			if (Base::CollisionRect(this, b))
 			{
 				b->SetKill();
 				SetKill();
 			}
+			break;
+		case eType_Map:
+			if (Map* m = dynamic_cast<Map*>(b)) {
+				int t;
+				t = m->CollisionRect(CVector2D(m_pos.x, m_pos.y), m_rect);
+				if (t != 0) {
+					m_pos.x = m_pos_old.x;
+					SetKill();
+				}
+				
+			}
+
 			break;
 		}
 	}

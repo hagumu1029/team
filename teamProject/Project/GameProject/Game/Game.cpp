@@ -41,11 +41,14 @@ void Game::Update()
 		Base::Add(new Title());
 	}
 	//プレイヤー死亡　ボタン1でゲームシーン終了
-	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
+	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton5)) {
 		//全てのオブジェクトを破棄
 		Base::KillAll();
 		//タイトルシーンへ
 		Base::Add(new Title());
+		Base::Add(new Field());
+		Base::Add(new Map());
+		Base::Add(new Player(CVector2D(100, 450)));
 	}
 	m_cnt--;
 	if (m_cnt <= 0) {
