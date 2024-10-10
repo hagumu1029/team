@@ -140,6 +140,17 @@ void Player::Collision(Base* b)
 		}
 
 		break;
+	case eType_cannon:
+		if (Base::CollisionRect(this, b)) {{
+			m_hp -= 0;
+			if (m_hp <= 0) {
+			}
+			else {
+			}
+		}
+	}
+
+	break;
 
 	case eType_Bullet:
 		if (Base::CollisionRect(this, b)) {
