@@ -1,6 +1,7 @@
 //--•½ŽR--------------------------------------
 #include"Goal.h"
 #include"Map.h"
+#include"Fruit.h"
 
 
 
@@ -26,6 +27,7 @@
 	 Base::Add(new Enemy(CVector2D(1000, 1050)));
 	 Base::Add(new cannon(CVector2D(1300, 800), false));
 	 //Base::Add(new Bullet(CVector2D(1000,800)));
+	 m_cnt = 60 * 2;
 
 }
 
@@ -47,6 +49,11 @@ void Game::Update()
 		Base::Add(new Field());
 		Base::Add(new Map());
 		Base::Add(new Player(CVector2D(100, 450)));
+	}
+	m_cnt--;
+	if (m_cnt <= 0) {
+		m_cnt = 60 * 2;
+		Base::Add(new Fruit(CVector2D(Utility::Rand(0, 1000), 0)));
 	}
 }
 
