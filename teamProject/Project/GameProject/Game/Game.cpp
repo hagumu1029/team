@@ -22,7 +22,7 @@
 {
 	Base::Add(new Field());
 	 Base::Add(new Map());
-	 Base::Add(new Goal(CVector2D(2000, 900)));
+	 Base::Add(new Goal(CVector2D(3200, 900)));
 	 Base::Add(new Player(CVector2D(100, 450)));
 	 //Base::Add(new Enemy(CVector2D(1000, 1050)));
 	 Base::Add(new cannon(CVector2D(1300, 800), false));
