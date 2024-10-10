@@ -8,7 +8,7 @@ Fruit::Fruit(const CVector2D& pos) : Base(eType_Fruit)
 	m_img.SetCenter(10, 16);
 	m_rect = CRect(-8, -14, 8, 14);
 	m_pos = pos;
-	m_FallSpeed = 3.0;
+	m_FallSpeed = 3.5;
 	m_rand = 0;
 	m_cnt = 0;
 }
