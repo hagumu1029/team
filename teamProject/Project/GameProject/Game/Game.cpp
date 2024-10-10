@@ -27,8 +27,8 @@
 	 //Base::Add(new Enemy(CVector2D(1000, 1050)));
 	 Base::Add(new cannon(CVector2D(1300, 800), false));
 	 //Base::Add(new Bullet(CVector2D(1000,800)));
-	 m_cnt = 60 * 2;
-
+	 m_cnt = 60 * 1;
+	 m_enemy_cnt = 60 * 5;
 }
 
 void Game::Update()
@@ -54,9 +54,13 @@ void Game::Update()
 	if (m_cnt <= 0) {
 		m_cnt = 20;
 		Base::Add(new Fruit(CVector2D(Utility::Rand(0, 1920)+m_scroll.x, 0)));
-		m_cnt = 60 * 10;
-		Base::Add(new Enemy(CVector2D(1920+ m_scroll.x, 800),false));
-		Base::Add(new Enemy(CVector2D(0+ m_scroll.x, 800),true));
+	}
+	m_enemy_cnt--;
+	if (m_enemy_cnt <= 0) {
+		m_enemy_cnt = 60*5;
+
+		Base::Add(new Enemy(CVector2D(1920 + m_scroll.x, 800), false));
+		Base::Add(new Enemy(CVector2D(0 + m_scroll.x, 800), true));
 	}
 }
 
