@@ -26,9 +26,9 @@ Enemy::Enemy(const CVector2D& p)
 	m_img = COPY_RESOURCE("Enemy", CImage);
 	m_img.ChangeAnimation(0);
 	m_pos = p;
-	m_img.SetCenter(75, 150);
-	m_img.SetSize(150, 150);
-	m_rect = CRect(-55, -130, 5, 0);
+	m_img.SetCenter(128/2, 128);
+	m_img.SetSize(128, 128);
+	m_rect = CRect(32, -128, 32, 0);
 	m_state = eState_Idle;
 	m_is_ground = true;
 }
@@ -51,7 +51,7 @@ void Enemy::Draw()
 {
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.Draw();
-	//DrawRect();
+	DrawRect();
 }
 
 void Enemy::Collision(Base* b)
