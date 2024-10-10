@@ -28,7 +28,7 @@ Enemy::Enemy(const CVector2D& p)
 	m_pos = p;
 	m_img.SetCenter(75, 224);
 	m_img.SetSize(150, 150);
-	m_rect = CRect(-32, -128, 32, 0);
+	m_rect = CRect(-35, -110, 35, 20);
 	m_state = eState_Idle;
 	m_is_ground = true;
 }
